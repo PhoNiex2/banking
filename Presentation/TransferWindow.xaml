@@ -1,0 +1,90 @@
+﻿<Window x:Class="banking.Presentation.TransferWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Transfer Funds"
+        Height="430"
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        Background="#F8FAFC">
+
+    <Grid Margin="20">
+        <Border Background="White"
+                CornerRadius="18"
+                Padding="25"
+                BorderBrush="#E2E8F0"
+                BorderThickness="1">
+
+            <StackPanel>
+                <TextBlock Text="Transfer Funds"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           Foreground="#0F172A"/>
+
+                <TextBlock Text="Transfer funds from the selected account"
+                           FontSize="14"
+                           Foreground="#64748B"
+                           Margin="0,5,0,25"/>
+
+                <CheckBox x:Name="chkExternal"
+                          Content="External Transfer"
+                          Foreground="#0F172A"
+                          Margin="0,0,0,16" Checked="chkExternal_Checked"
+                          Unchecked="chkExternal_Checked"/>
+
+                <TextBlock Text="Destination Account Number"
+                           Foreground="#475569"
+                           Margin="3,0,0,6"/>
+
+                <TextBox x:Name="txtDestinationAccount"
+                         Height="42"
+                         Padding="10"
+                         Margin="0,0,0,16"/>
+
+                <TextBlock Text="Amount"
+                           Foreground="#475569"
+                           Margin="3,0,0,6"/>
+
+                <TextBox x:Name="txtAmount"
+                         Height="42"
+                         Padding="10"
+                         Margin="0,0,0,20"/>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                    <Button Content="Cancel"
+                            Width="110"
+                            Height="42"
+                            Margin="0,0,10,0"
+                            Background="#CBD5E1"
+                            Foreground="#0F172A"
+                            BorderThickness="0"
+                            Click="Cancel_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Transfer"
+                            Width="130"
+                            Height="42"
+                            Background="#7C3AED"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Click="Transfer_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
